@@ -7,13 +7,13 @@
 
 import SwiftUI
 import AVFoundation
-import UIKit
 
 struct GuiaView: View {
     @State private var scannedCode: String?
     @State private var showSuccessMessage = false
     @State private var isScanning = true
     @State private var showingPermissionAlert = false
+    @State private var showARSymbolView = false
 
     var body: some View {
         NavigationView {
@@ -25,6 +25,10 @@ struct GuiaView: View {
                         if code == "MTY" {
                             self.showSuccessMessage = true
                             self.isScanning = false // Stop scanning on success
+                            // Present AR view after a short delay
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                                self.showARSymbolView = true
+                            }
                         } else {
                             self.showSuccessMessage = false
                         }
@@ -90,6 +94,9 @@ struct GuiaView: View {
                 }),
                 secondaryButton: .cancel(Text("Cancelar"))
             )
+        }
+        .fullScreenCover(isPresented: $showARSymbolView) {
+            ARSymbolView()
         }
     }
 

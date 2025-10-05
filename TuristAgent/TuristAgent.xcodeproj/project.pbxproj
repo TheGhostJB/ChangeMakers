@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		5D0A84692E932E0C0014B958 /* ARKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0A84672E932E030014B958 /* ARKit.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		5D0A83B32E9309C50014B958 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +31,7 @@
 		5D0A83A52E9309C40014B958 /* TuristAgent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TuristAgent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D0A83B22E9309C50014B958 /* TuristAgentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TuristAgentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D0A83BC2E9309C50014B958 /* TuristAgentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TuristAgentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D0A84672E932E030014B958 /* ARKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARKit.framework; path = System/Library/Frameworks/ARKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -52,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D0A84692E932E0C0014B958 /* ARKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +84,7 @@
 				5D0A83A72E9309C40014B958 /* TuristAgent */,
 				5D0A83B52E9309C50014B958 /* TuristAgentTests */,
 				5D0A83BF2E9309C50014B958 /* TuristAgentUITests */,
+				5D0A84662E932E020014B958 /* Frameworks */,
 				5D0A83A62E9309C40014B958 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +97,14 @@
 				5D0A83BC2E9309C50014B958 /* TuristAgentUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		5D0A84662E932E020014B958 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5D0A84672E932E030014B958 /* ARKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

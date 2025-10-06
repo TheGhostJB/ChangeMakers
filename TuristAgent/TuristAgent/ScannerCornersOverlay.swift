@@ -43,3 +43,8 @@ struct ScannerCornersOverlay: View {
         }
     }
 }
+
+#Preview {
+    ScannerCornersOverlay()
+        .frame(width: 250, height: 250)
+}

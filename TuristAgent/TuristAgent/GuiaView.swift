@@ -7,13 +7,13 @@
 
 import SwiftUI
 import AVFoundation
-import UIKit
 
 struct GuiaView: View {
     @State private var scannedCode: String?
     @State private var showSuccessMessage = false
     @State private var isScanning = true
     @State private var showingPermissionAlert = false
+    @State private var showARSymbolView = false
 
     var body: some View {
         NavigationView {
@@ -25,6 +25,10 @@ struct GuiaView: View {
                         if code == "MTY" {
                             self.showSuccessMessage = true
                             self.isScanning = false // Stop scanning on success
+                            // Present AR view after a short delay
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                                self.showARSymbolView = true
+                            }
                         } else {
                             self.showSuccessMessage = false
                         }
@@ -56,14 +60,20 @@ struct GuiaView: View {
                     .padding(.bottom, 50)
 
                     if showSuccessMessage {
-                        Text("¡Todo bien!")
-                            .font(.title2)
-                            .fontWeight(.semibold)
-                            .foregroundColor(.green)
-                            .padding()
-                            .background(Capsule().fill(Color.green.opacity(0.2)))
-                            .transition(.opacity)
-                            .animation(.easeIn, value: showSuccessMessage)
+                        VStack(spacing: 8) {
+                            Text("¡Todo bien!")
+                                .font(.title2)
+                                .fontWeight(.semibold)
+                                .foregroundColor(.green)
+                            
+                            Text("Abriendo vista AR...")
+                                .font(.caption)
+                                .foregroundColor(.white)
+                        }
+                        .padding()
+                        .background(Capsule().fill(Color.green.opacity(0.2)))
+                        .transition(.opacity)
+                        .animation(.easeIn, value: showSuccessMessage)
                     } else if let code = scannedCode {
                         Text("Código escaneado: \(code)")
                             .font(.headline)
@@ -90,6 +100,9 @@ struct GuiaView: View {
                 }),
                 secondaryButton: .cancel(Text("Cancelar"))
             )
+        }
+        .fullScreenCover(isPresented: $showARSymbolView) {
+            ARSymbolView()
         }
     }
 

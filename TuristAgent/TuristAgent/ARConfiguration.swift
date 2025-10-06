@@ -53,8 +53,8 @@ struct ARConfiguration {
 
 #Preview {
     VStack {
-        Text("ARKit Available: \(ARConfiguration.isARKitAvailable())")
-        Text("Reference Images Available: \(ARConfiguration.areReferenceImagesAvailable())")
+        Text("ARKit Available: \(String(ARConfiguration.isARKitAvailable()))")
+        Text("Reference Images Available: \(String(ARConfiguration.areReferenceImagesAvailable()))")
         Text("Images: \(ARConfiguration.listReferenceImages().joined(separator: ", "))")
     }
     .padding()

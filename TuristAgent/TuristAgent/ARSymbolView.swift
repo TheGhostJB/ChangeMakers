@@ -303,7 +303,7 @@ struct ARViewContainer: UIViewRepresentable {
             let planeNode = SCNNode(geometry: plane)
             
             // Rotate the plane to match the anchor (lay flat on the image)
-            planeNode.eulerAngles.x = -.pi / 2
+            planeNode.eulerAngles.x = -.pi
             
             // Position slightly above the image to avoid z-fighting
             planeNode.position = SCNVector3(0, 0.001, 0)

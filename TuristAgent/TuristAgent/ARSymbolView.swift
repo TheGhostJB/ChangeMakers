@@ -292,10 +292,49 @@ struct ARViewContainer: UIViewRepresentable {
             headNode.position = SCNVector3(0, 1.7, 0) // Position head at the front (doubled)
             arrowNode.addChildNode(headNode)
             
+            
             // Rotate arrow 90 degrees on X axis
             arrowNode.eulerAngles.x = Float.pi // Rotate 90 degrees on X axis
             
+            // Start the back and forth animation
+            startArrowAnimation(arrowNode: arrowNode)
+            
             return arrowNode
+        }
+        
+        /// Animates the arrow to move back and forth continuously on Y axis and up/down
+        private func startArrowAnimation(arrowNode: SCNNode) {
+            // Define the animation distances
+            let horizontalDistance: CGFloat = 2.0  // Back and forth movement
+            let verticalDistance: CGFloat = 1.0    // Up and down movement
+            
+            // Create the forward animation (from back to front on Y axis)
+            let moveForward = SCNAction.moveBy(x: 0, y: horizontalDistance, z: 0, duration: 0.8)
+            moveForward.timingMode = SCNActionTimingMode.easeInEaseOut
+            
+            // Create the backward animation (from front to back on Y axis)
+            let moveBackward = SCNAction.moveBy(x: 0, y: -horizontalDistance, z: 0, duration: 0.8)
+            moveBackward.timingMode = SCNActionTimingMode.easeInEaseOut
+            
+            // Create the up animation (vertical movement)
+            let moveUp = SCNAction.moveBy(x: 0, y: 0, z: verticalDistance, duration: 1.6) // Half speed (double duration)
+            moveUp.timingMode = SCNActionTimingMode.easeInEaseOut
+            
+            // Create the down animation (vertical movement)
+            let moveDown = SCNAction.moveBy(x: 0, y: 0, z: -verticalDistance, duration: 1.6) // Half speed (double duration)
+            moveDown.timingMode = SCNActionTimingMode.easeInEaseOut
+            
+            // Create sequences for both animations
+            let backAndForth = SCNAction.sequence([moveForward, moveBackward])
+            let upAndDown = SCNAction.sequence([moveUp, moveDown])
+            
+            // Repeat both sequences forever
+            let repeatHorizontal = SCNAction.repeatForever(backAndForth)
+            let repeatVertical = SCNAction.repeatForever(upAndDown)
+            
+            // Run both animations simultaneously
+            let group = SCNAction.group([repeatHorizontal, repeatVertical])
+            arrowNode.runAction(group)
         }
         
         /// Creates content node based on the detected image

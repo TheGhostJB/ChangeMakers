@@ -270,6 +270,34 @@ struct ARViewContainer: UIViewRepresentable {
         
         // MARK: - Helper Methods
         
+        /// Creates a 3D arrow node - proper arrow shape with triangular head and rectangular shaft
+        private func createArrowNode() -> SCNNode {
+            let arrowNode = SCNNode()
+            
+            // Create arrow shaft (rectangular box) - scale x12 (doubled from x6)
+            let shaftGeometry = SCNBox(width: 0.4, height: 8.0, length: 0.2, chamferRadius: 0)
+            shaftGeometry.firstMaterial?.diffuse.contents = UIColor.white
+            shaftGeometry.firstMaterial?.lightingModel = SCNMaterial.LightingModel.constant // Make it more visible
+            shaftGeometry.firstMaterial?.emission.contents = UIColor.white // Add emission for better visibility
+            let shaftNode = SCNNode(geometry: shaftGeometry)
+            shaftNode.position = SCNVector3(0, -1.7, 0) // Position shaft towards the back (doubled)
+            arrowNode.addChildNode(shaftNode)
+            
+            // Create arrow head (triangular pyramid) - scale x12 (doubled from x6)
+            let headGeometry = SCNPyramid(width: 1.2, height: 3.4, length: 0.2)
+            headGeometry.firstMaterial?.diffuse.contents = UIColor.white
+            headGeometry.firstMaterial?.lightingModel = SCNMaterial.LightingModel.constant // Make it more visible
+            headGeometry.firstMaterial?.emission.contents = UIColor.white // Add emission for better visibility
+            let headNode = SCNNode(geometry: headGeometry)
+            headNode.position = SCNVector3(0, 1.7, 0) // Position head at the front (doubled)
+            arrowNode.addChildNode(headNode)
+            
+            // Rotate arrow 90 degrees on X axis
+            arrowNode.eulerAngles.x = Float.pi // Rotate 90 degrees on X axis
+            
+            return arrowNode
+        }
+        
         /// Creates content node based on the detected image
         /// When "cp" image is detected, show "ss" image overlay
         private func createContentNode(for imageAnchor: ARImageAnchor) -> SCNNode {
@@ -285,31 +313,22 @@ struct ARViewContainer: UIViewRepresentable {
             
             // Check if this is the "cp" image (FIFA image)
             if referenceImage.name == "cp" {
-                // Load and display the "ss" image when "cp" is detected
-                if let ssImage = UIImage(named: "ss") {
-                    plane.firstMaterial?.diffuse.contents = ssImage
-                    print("✅ Mostrando imagen 'ss' sobre 'cp' detectada")
-                } else {
-                    // Fallback: show a blue overlay if "ss" image is not found
-                    plane.firstMaterial?.diffuse.contents = UIColor.blue.withAlphaComponent(0.7)
-                    print("⚠️ Imagen 'ss' no encontrada, mostrando overlay azul")
-                }
+                // Create and position the arrow where the "ss" image was
+                let arrowNode = createArrowNode()
+                // Position the arrow where the image was (same position as before)
+                let slideOffset = Float(physicalSize.width)
+                arrowNode.position = SCNVector3(-slideOffset, 0.001, 0)
+                node.addChildNode(arrowNode)
+                print("✅ Mostrando flecha en lugar de imagen 'ss' sobre 'cp' detectada")
             } else {
                 // For other images, show a simple overlay
                 plane.firstMaterial?.diffuse.contents = UIColor.green.withAlphaComponent(0.7)
+                let planeNode = SCNNode(geometry: plane)
+                planeNode.eulerAngles.x = -.pi
+                planeNode.position = SCNVector3(0, 0.001, 0)
+                node.addChildNode(planeNode)
                 print("✅ Mostrando overlay verde para imagen: \(referenceImage.name ?? "Unknown")")
             }
-            
-            let planeNode = SCNNode(geometry: plane)
-            
-            // Rotate the plane to match the anchor (lay flat on the image)
-            planeNode.eulerAngles.x = -.pi
-            
-            // Position slightly above the image to avoid z-fighting
-            planeNode.position = SCNVector3(0, 0.001, 0)
-            
-            // Add plane node to parent
-            node.addChildNode(planeNode)
             
             return node
         }

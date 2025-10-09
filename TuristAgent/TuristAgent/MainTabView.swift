@@ -23,6 +23,7 @@ struct MainTabView: View {
                 }
         }
         .accentColor(.blue)
+        .environment(ModelData.shared)
     }
 }
 

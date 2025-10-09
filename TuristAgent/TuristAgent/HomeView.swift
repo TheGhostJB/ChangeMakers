@@ -8,50 +8,77 @@
 import SwiftUI
 
 struct HomeView: View {
+    @Environment(ModelData.self) var modelData
+    
     var body: some View {
-        NavigationView {
-            ZStack {
-                // Fondo blanco
-                Color.white
-                    .ignoresSafeArea()
-                
-                VStack(spacing: 30) {
-                    Image(systemName: "mappin.circle.fill")
-                        .imageScale(.large)
-                        .foregroundStyle(.blue)
-                        .font(.system(size: 60))
-                    
-                    Text("¡Bienvenido a TuristAgent!")
+        NavigationStack {
+            ScrollView {
+                LazyVStack(alignment: .leading, spacing: 16) {
+                    Text("Destinos Disponibles")
                         .font(.title)
                         .fontWeight(.bold)
-                        .foregroundColor(.black)
+                        .padding(.horizontal)
                     
-                    Text("Tu agente de viajes personal")
-                        .font(.subheadline)
-                        .foregroundColor(.gray)
-                    
-                    Spacer()
-                    
-                    VStack(spacing: 15) {
-                        Text("Explora lugares increíbles")
-                            .font(.headline)
-                            .foregroundColor(.black)
-                        
-                        Text("Usa la pestaña 'Scan' para activar la realidad aumentada")
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
-                            .multilineTextAlignment(.center)
+                    ForEach(modelData.csvData) { city in
+                        NavigationLink(destination: CityView(csvData: city)) {
+                            CityCardView(csvData: city)
+                        }
+                        .buttonStyle(.plain)
                     }
-                    
-                    Spacer()
                 }
-                .padding()
+                .padding(.top)
             }
+            .navigationTitle("Trip Planner")
+            .navigationBarTitleDisplayMode(.large)
         }
-        .navigationViewStyle(StackNavigationViewStyle())
+    }
+}
+
+struct CityCardView: View {
+    let csvData: CSVData
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack {
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(csvData.ciudad)
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                    
+                    Text(csvData.pais)
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                    
+                    Text("Estadio: \(csvData.estadio)")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+                
+                Spacer()
+                
+                VStack {
+                    Text("Clima")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                    Text("\(csvData.clima)°C")
+                        .font(.headline)
+                        .fontWeight(.semibold)
+                }
+            }
+            
+            Text(csvData.descripcionCiudad)
+                .font(.body)
+                .foregroundStyle(.secondary)
+                .lineLimit(2)
+        }
+        .padding()
+        .background(.gray.opacity(0.1))
+        .cornerRadius(12)
+        .padding(.horizontal)
     }
 }
 
 #Preview {
     HomeView()
+        .environment(ModelData.shared)
 }

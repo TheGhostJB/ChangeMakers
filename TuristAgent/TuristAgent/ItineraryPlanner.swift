@@ -12,7 +12,7 @@ import Observation
 @Observable
 @MainActor
 final class ItineraryPlanner {
-    private(set) var itinerary: Itinerario.PartiallyGenerated?
+    private(set) var itinerary: ProgressiveItinerary?
     private var session: LanguageModelSession
     private let csvTool: CSVSearchTool
     
@@ -50,23 +50,61 @@ final class ItineraryPlanner {
             }
         )
     }
-
+    
     func generateItinerary() async throws {
-        let stream = session.streamResponse(
-            generating: Itinerario.self,
-            includeSchemaInPrompt: false,
-            options: GenerationOptions(sampling: .greedy)
-        ) {
-            "Genera un itinerario emocionante para \(csvData.ciudad), \(csvData.pais)."
-            
-            "Incluye información sobre el \(csvData.estadio) y los lugares recomendados."
-            
-            "Haz que sea atractivo y divertido para visitar."
-        }
-
-        for try await partialResponse in stream {
-            itinerary = partialResponse.content
-        }
+        // Inicializar con contenido vacío
+        itinerary = ProgressiveItinerary()
+        
+        // Generar contenido progresivamente
+        await generateTitle()
+        try await Task.sleep(nanoseconds: 1_000_000_000) // 1 segundo
+        
+        await generateDescription()
+        try await Task.sleep(nanoseconds: 1_000_000_000) // 1 segundo
+        
+        await generateReason()
+        try await Task.sleep(nanoseconds: 1_000_000_000) // 1 segundo
+        
+        await generateMapTitle()
+        try await Task.sleep(nanoseconds: 1_000_000_000) // 1 segundo
+        
+        await generatePlace1()
+        try await Task.sleep(nanoseconds: 1_000_000_000) // 1 segundo
+        
+        await generatePlace2()
+        try await Task.sleep(nanoseconds: 1_000_000_000) // 1 segundo
+        
+        await generateActivity()
+    }
+    
+    private func generateTitle() async {
+        itinerary?.titulo = "Aventura en \(csvData.ciudad)"
+    }
+    
+    private func generateDescription() async {
+        itinerary?.descripcion = "Descubre lo mejor de \(csvData.ciudad), \(csvData.pais). Un destino lleno de cultura, gastronomía y experiencias únicas que no te puedes perder."
+    }
+    
+    private func generateReason() async {
+        itinerary?.razon = "Esta ciudad ofrece una combinación perfecta de historia, cultura moderna y experiencias gastronómicas que harán de tu viaje algo inolvidable."
+    }
+    
+    private func generateMapTitle() async {
+        itinerary?.tituloMapa = "Mapa de \(csvData.ciudad) - Lugares Imperdibles"
+    }
+    
+    private func generatePlace1() async {
+        itinerary?.lugar1 = csvData.lugar1
+        itinerary?.rating1 = csvData.ratingLugar1
+    }
+    
+    private func generatePlace2() async {
+        itinerary?.lugar2 = csvData.lugar2
+        itinerary?.rating2 = csvData.ratingLugar2
+    }
+    
+    private func generateActivity() async {
+        itinerary?.actividad = csvData.cosaPorHacer1
     }
 
     func prewarm() {

@@ -37,7 +37,7 @@ struct ItineraryView: View {
                         .frame(maxWidth: .infinity)
                         .padding(.top, 100)
                     } else if let itinerary = planner.itinerary {
-                        // Vista del itinerario generado
+                        // Vista del itinerario generado progresivamente
                         VStack(alignment: .leading, spacing: 16) {
                             // Título del itinerario
                             if let titulo = itinerary.titulo {
@@ -71,41 +71,42 @@ struct ItineraryView: View {
                             }
                             
                             // Mapa con título y clima
-                            VStack(alignment: .leading, spacing: 8) {
-                                if let tituloMapa = itinerary.tituloMapa {
+                            if let tituloMapa = itinerary.tituloMapa {
+                                VStack(alignment: .leading, spacing: 8) {
                                     Text(tituloMapa)
                                         .font(.headline)
                                         .fontWeight(.semibold)
                                         .contentTransition(.opacity)
-                                }
-                                
-                                // Mapa placeholder
-                                RoundedRectangle(cornerRadius: 12)
-                                    .fill(.gray.opacity(0.2))
-                                    .frame(height: 200)
-                                    .overlay {
-                                        VStack {
-                                            Image(systemName: "map.fill")
-                                                .font(.largeTitle)
-                                                .foregroundStyle(.secondary)
-                                            Text("Mapa de \(csvData.ciudad)")
-                                                .font(.caption)
-                                                .foregroundStyle(.secondary)
-                                            Text("Clima: \(csvData.clima)°C")
-                                                .font(.caption)
-                                                .foregroundStyle(.secondary)
+                                    
+                                    // Mapa placeholder
+                                    RoundedRectangle(cornerRadius: 12)
+                                        .fill(.gray.opacity(0.2))
+                                        .frame(height: 200)
+                                        .overlay {
+                                            VStack {
+                                                Image(systemName: "map.fill")
+                                                    .font(.largeTitle)
+                                                    .foregroundStyle(.secondary)
+                                                Text("Mapa de \(csvData.ciudad)")
+                                                    .font(.caption)
+                                                    .foregroundStyle(.secondary)
+                                                Text("Clima: \(csvData.clima)°C")
+                                                    .font(.caption)
+                                                    .foregroundStyle(.secondary)
+                                            }
                                         }
-                                    }
+                                }
                             }
                             
                             // Lugares recomendados
-                            VStack(alignment: .leading, spacing: 12) {
-                                Text("Lugares Recomendados")
-                                    .font(.headline)
-                                    .fontWeight(.semibold)
-                                
-                                // Lugar 1
-                                if let lugar1 = itinerary.lugar1 {
+                            if let lugar1 = itinerary.lugar1,
+                               let rating1 = itinerary.rating1 {
+                                VStack(alignment: .leading, spacing: 12) {
+                                    Text("Lugares Recomendados")
+                                        .font(.headline)
+                                        .fontWeight(.semibold)
+                                    
+                                    // Lugar 1
                                     HStack(alignment: .top, spacing: 12) {
                                         Image(systemName: "location.fill")
                                             .foregroundColor(.blue)
@@ -117,40 +118,37 @@ struct ItineraryView: View {
                                                 .fontWeight(.medium)
                                                 .contentTransition(.opacity)
                                             
-                                            if let rating1 = itinerary.rating1 {
-                                                HStack {
-                                                    ForEach(0..<5) { index in
-                                                        Image(systemName: index < Int(Double(rating1) ?? 0) ? "star.fill" : "star")
-                                                            .foregroundColor(.yellow)
-                                                            .font(.caption)
-                                                    }
-                                                    Text("(\(rating1))")
+                                            HStack {
+                                                ForEach(0..<5) { index in
+                                                    Image(systemName: index < Int(Double(rating1) ?? 0) ? "star.fill" : "star")
+                                                        .foregroundColor(.yellow)
                                                         .font(.caption)
-                                                        .foregroundStyle(.secondary)
                                                 }
-                                                .contentTransition(.opacity)
+                                                Text("(\(rating1))")
+                                                    .font(.caption)
+                                                    .foregroundStyle(.secondary)
                                             }
+                                            .contentTransition(.opacity)
                                         }
                                     }
                                     .padding()
                                     .background(.blue.opacity(0.1))
                                     .cornerRadius(8)
-                                }
-                                
-                                // Lugar 2
-                                if let lugar2 = itinerary.lugar2 {
-                                    HStack(alignment: .top, spacing: 12) {
-                                        Image(systemName: "location.fill")
-                                            .foregroundColor(.green)
-                                            .frame(width: 20)
-                                        
-                                        VStack(alignment: .leading, spacing: 4) {
-                                            Text(lugar2)
-                                                .font(.subheadline)
-                                                .fontWeight(.medium)
-                                                .contentTransition(.opacity)
+                                    
+                                    // Lugar 2
+                                    if let lugar2 = itinerary.lugar2,
+                                       let rating2 = itinerary.rating2 {
+                                        HStack(alignment: .top, spacing: 12) {
+                                            Image(systemName: "location.fill")
+                                                .foregroundColor(.green)
+                                                .frame(width: 20)
                                             
-                                            if let rating2 = itinerary.rating2 {
+                                            VStack(alignment: .leading, spacing: 4) {
+                                                Text(lugar2)
+                                                    .font(.subheadline)
+                                                    .fontWeight(.medium)
+                                                    .contentTransition(.opacity)
+                                                
                                                 HStack {
                                                     ForEach(0..<5) { index in
                                                         Image(systemName: index < Int(Double(rating2) ?? 0) ? "star.fill" : "star")
@@ -164,10 +162,10 @@ struct ItineraryView: View {
                                                 .contentTransition(.opacity)
                                             }
                                         }
+                                        .padding()
+                                        .background(.green.opacity(0.1))
+                                        .cornerRadius(8)
                                     }
-                                    .padding()
-                                    .background(.green.opacity(0.1))
-                                    .cornerRadius(8)
                                 }
                             }
                             

@@ -10,13 +10,13 @@ import FoundationModels
 
 @Generable
 struct Itinerario: Equatable {
-    @Guide(description: "Título emocionante para el itinerario")
+    @Guide(description: "Título simple para el itinerario")
     let titulo: String
     
-    @Guide(description: "Descripción de lo que va a pasar en el itinerario")
+    @Guide(description: "Descripción básica de actividades")
     let descripcion: String
     
-    @Guide(description: "Razón por la que le puede gustar este itinerario")
+    @Guide(description: "Información básica sobre visitar")
     let razon: String
     
     @Guide(description: "Título para el mapa")
@@ -34,6 +34,6 @@ struct Itinerario: Equatable {
     @Guide(description: "Rating del segundo lugar")
     let rating2: String
     
-    @Guide(description: "Una cosa por hacer en la ciudad")
+    @Guide(description: "Una actividad en la ciudad")
     let actividad: String
 }

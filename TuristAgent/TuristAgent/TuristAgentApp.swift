@@ -6,8 +6,6 @@
 //
 
 import SwiftUI
-import AppIntents
-import FoundationModels
 
 @main
 struct TuristAgentApp: App {
@@ -15,10 +13,5 @@ struct TuristAgentApp: App {
         WindowGroup {
             ContentView()
         }
-    }
-    
-    init() {
-        // Los App Intents se registran automáticamente en iOS 26
-        // No necesitamos registro manual
     }
 }

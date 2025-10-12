@@ -14,11 +14,9 @@ class ModelData {
     
     var csvData: [CSVData] = []
     var selectedCity: CSVData?
-    var siriGeneratedPlanner: ItineraryPlanner?
     
     private init() {
         loadCSVData()
-        print("ModelData inicializado con \(csvData.count) ciudades")
     }
     
     func loadCSVData() {
@@ -75,11 +73,6 @@ class ModelData {
             }
         } catch {
             print("Error cargando CSV: \(error)")
-        }
-        
-        print("CSV cargado exitosamente: \(csvData.count) ciudades")
-        for city in csvData {
-            print("- \(city.ciudad), \(city.pais)")
         }
     }
     

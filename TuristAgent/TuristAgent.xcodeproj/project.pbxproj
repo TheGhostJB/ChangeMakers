@@ -34,22 +34,9 @@
 		5D7B94CE2E9BA3F100797165 /* icon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = icon.icon; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		BAA5CF642E9BAC92007547E5 /* Exceptions for "TuristAgent" folder in "TuristAgent" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 5D0A83A42E9309C40014B958 /* TuristAgent */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		5D0A83A72E9309C40014B958 /* TuristAgent */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				BAA5CF642E9BAC92007547E5 /* Exceptions for "TuristAgent" folder in "TuristAgent" target */,
-			);
 			path = TuristAgent;
 			sourceTree = "<group>";
 		};
@@ -420,7 +407,6 @@
 				DEVELOPMENT_TEAM = G57L98C429;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TuristAgent/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "to scan the ticker";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -454,7 +440,6 @@
 				DEVELOPMENT_TEAM = G57L98C429;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TuristAgent/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "to scan the ticker";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

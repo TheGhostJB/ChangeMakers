@@ -36,8 +36,7 @@ struct ItineraryView: View {
             }
         }
         .onAppear {
-            // Solo generar si no hay itinerario ya generado
-            if planner.itinerary == nil && !isGenerating {
+            if !isGenerating {
                 isGenerating = true
                 Task {
                     do {

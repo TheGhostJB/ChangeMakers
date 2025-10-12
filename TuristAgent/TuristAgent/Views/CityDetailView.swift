@@ -74,6 +74,7 @@ struct CityDetailView: View {
                             value: csvData.pais
                         )
                     }
+                    .frame(maxWidth: .infinity)
                     .padding(.horizontal)
                     
                     // Botón para generar itinerario con estilo Glass
@@ -94,37 +95,9 @@ struct CityDetailView: View {
                             .padding(.horizontal, 24)
                             .background {
                                 ZStack {
-                                    // Material de fondo con efecto glass más transparente
-                                    RoundedRectangle(cornerRadius: 16)
-                                        .fill(.ultraThinMaterial.opacity(0.7))
-                                        .overlay {
-                                            RoundedRectangle(cornerRadius: 16)
-                                                .stroke(
-                                                    LinearGradient(
-                                                        colors: [
-                                                            .white.opacity(0.4),
-                                                            .clear,
-                                                            .white.opacity(0.2)
-                                                        ],
-                                                        startPoint: .topLeading,
-                                                        endPoint: .bottomTrailing
-                                                    ),
-                                                    lineWidth: 1.5
-                                                )
-                                        }
-                                    
-                                    // Overlay de color más sutil
-                                    RoundedRectangle(cornerRadius: 16)
-                                        .fill(
-                                            LinearGradient(
-                                                colors: [
-                                                    .blue.opacity(0.08),
-                                                    .purple.opacity(0.05)
-                                                ],
-                                                startPoint: .topLeading,
-                                                endPoint: .bottomTrailing
-                                            )
-                                        )
+                                      // Material de fondo con efecto glass más oscuro
+                                      RoundedRectangle(cornerRadius: 16)
+                                         .fill(.thickMaterial.opacity(1))
                                 }
                             }
                             .foregroundStyle(.primary)

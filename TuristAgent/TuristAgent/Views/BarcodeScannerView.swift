@@ -11,6 +11,7 @@ import AVFoundation
 struct BarcodeScannerView: View {
     var didFindCode: (String) -> Void
     @State private var scannedCode: String = ""
+    @State private var showARSymbolView = false
     
     var body: some View {
         VStack(spacing: 20) {
@@ -20,6 +21,11 @@ struct BarcodeScannerView: View {
             ScannerEmbeddedView(didFindCode: { code in
                 scannedCode = code
                 didFindCode(code)
+                
+                // Si escanea "MTY", mostrar ARSymbolView
+                if code == "MTY" {
+                    showARSymbolView = true
+                }
             })
             .frame(height: 600)
             .cornerRadius(16)
@@ -36,6 +42,9 @@ struct BarcodeScannerView: View {
             Spacer()
         }
         .background(Color.white)
+        .fullScreenCover(isPresented: $showARSymbolView) {
+            ARSymbolView()
+        }
     }
 }
 

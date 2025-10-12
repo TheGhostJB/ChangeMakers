@@ -1,0 +1,32 @@
+{
+  "source": "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/TuristAgent/AR/ARConfiguration.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "ARKit Available: %@",
+        "location": {
+          "startingColumn": 1,
+          "startingLine": 54
+        }
+      },
+      {
+        "comment": "",
+        "key": "Reference Images Available: %@",
+        "location": {
+          "startingColumn": 1,
+          "startingLine": 54
+        }
+      },
+      {
+        "comment": "",
+        "key": "Images: %@",
+        "location": {
+          "startingColumn": 1,
+          "startingLine": 54
+        }
+      }
+    ]
+  },
+  "version": 1
+}

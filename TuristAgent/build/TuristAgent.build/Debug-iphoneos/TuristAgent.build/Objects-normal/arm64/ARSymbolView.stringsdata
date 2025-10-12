@@ -1,0 +1,40 @@
+{
+  "source": "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/TuristAgent/Views/ARSymbolView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Cerrar",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 42
+        }
+      },
+      {
+        "comment": "",
+        "key": "Detected",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 67
+        }
+      },
+      {
+        "comment": "",
+        "key": "Buscando",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 81
+        }
+      },
+      {
+        "comment": "",
+        "key": "Reintentar",
+        "location": {
+          "startingColumn": 32,
+          "startingLine": 97
+        }
+      }
+    ]
+  },
+  "version": 1
+}

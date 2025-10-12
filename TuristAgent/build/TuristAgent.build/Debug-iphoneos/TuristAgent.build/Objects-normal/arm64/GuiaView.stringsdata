@@ -1,0 +1,56 @@
+{
+  "source": "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/TuristAgent/Views/GuiaView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "ESCANEAR BOLETO",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 44
+        }
+      },
+      {
+        "comment": "",
+        "key": "Código escaneado: %@",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 66
+        }
+      },
+      {
+        "comment": "",
+        "key": "Permiso de Cámara Denegado",
+        "location": {
+          "startingColumn": 29,
+          "startingLine": 82
+        }
+      },
+      {
+        "comment": "",
+        "key": "Por favor, habilita el acceso a la cámara en la configuración de tu dispositivo para usar esta función.",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 83
+        }
+      },
+      {
+        "comment": "",
+        "key": "Configuración",
+        "location": {
+          "startingColumn": 46,
+          "startingLine": 84
+        }
+      },
+      {
+        "comment": "",
+        "key": "Cancelar",
+        "location": {
+          "startingColumn": 47,
+          "startingLine": 89
+        }
+      }
+    ]
+  },
+  "version": 1
+}

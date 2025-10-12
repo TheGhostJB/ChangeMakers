@@ -1,0 +1,16 @@
+{
+  "source": "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/TuristAgent/Views/MapView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Cargando mapa...",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 46
+        }
+      }
+    ]
+  },
+  "version": 1
+}

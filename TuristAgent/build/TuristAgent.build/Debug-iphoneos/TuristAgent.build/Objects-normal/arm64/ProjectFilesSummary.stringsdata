@@ -1,0 +1,48 @@
+{
+  "source": "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/TuristAgent/Utils/ProjectFilesSummary.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Resumen del Proyecto",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 39
+        }
+      },
+      {
+        "comment": "",
+        "key": "📱 Archivos Principales",
+        "location": {
+          "startingColumn": 25,
+          "startingLine": 14
+        }
+      },
+      {
+        "comment": "",
+        "key": "🔧 Archivos de Configuración",
+        "location": {
+          "startingColumn": 25,
+          "startingLine": 20
+        }
+      },
+      {
+        "comment": "",
+        "key": "📋 Archivos Existentes",
+        "location": {
+          "startingColumn": 25,
+          "startingLine": 25
+        }
+      },
+      {
+        "comment": "",
+        "key": "🎯 Configuración Requerida",
+        "location": {
+          "startingColumn": 25,
+          "startingLine": 32
+        }
+      }
+    ]
+  },
+  "version": 1
+}

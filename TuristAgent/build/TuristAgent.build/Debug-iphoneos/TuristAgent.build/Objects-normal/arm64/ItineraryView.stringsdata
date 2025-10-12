@@ -1,0 +1,64 @@
+{
+  "source": "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/TuristAgent/Views/ItineraryView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Itinerario",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 28
+        }
+      },
+      {
+        "comment": "",
+        "key": "Cerrar",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 32
+        }
+      },
+      {
+        "comment": "",
+        "key": "Generando tu itinerario...",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 60
+        }
+      },
+      {
+        "comment": "",
+        "key": "Estamos creando el plan perfecto para %@",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 64
+        }
+      },
+      {
+        "comment": "",
+        "key": "Lugares Recomendados",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 158
+        }
+      },
+      {
+        "comment": "",
+        "key": "(%@)",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 208
+        }
+      },
+      {
+        "comment": "",
+        "key": "Actividad Especial",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 220
+        }
+      }
+    ]
+  },
+  "version": 1
+}

@@ -1,0 +1,64 @@
+{
+  "source": "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/TuristAgent/Views/CityDetailView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 130
+        }
+      },
+      {
+        "comment": "",
+        "key": "Generar Itinerario",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 90
+        }
+      },
+      {
+        "comment": "",
+        "key": "Atrás",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 140
+        }
+      },
+      {
+        "comment": "",
+        "key": "Generando itinerario...",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 255
+        }
+      },
+      {
+        "comment": "",
+        "key": "Lugares Recomendados",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 377
+        }
+      },
+      {
+        "comment": "",
+        "key": "Actividad Especial",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 409
+        }
+      },
+      {
+        "comment": "",
+        "key": "(%@)",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 573
+        }
+      }
+    ]
+  },
+  "version": 1
+}

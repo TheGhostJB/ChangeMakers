@@ -1,0 +1,219 @@
+{
+  "" : {
+    "diagnostics" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/TuristAgent-primary.dia",
+    "emit-module-dependencies" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/TuristAgent-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/TuristAgent-primary-emit-module.dia",
+    "pch" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/TuristAgent-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/TuristAgent-primary.swiftdeps"
+  },
+  "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/TuristAgent/AR/ARConfiguration.swift" : {
+    "const-values" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ARConfiguration.swiftconstvalues",
+    "dependencies" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ARConfiguration.d",
+    "diagnostics" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ARConfiguration.dia",
+    "index-unit-output-path" : "/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ARConfiguration.o",
+    "llvm-bc" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ARConfiguration.bc",
+    "object" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ARConfiguration.o",
+    "swift-dependencies" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ARConfiguration.swiftdeps",
+    "swiftmodule" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ARConfiguration~partial.swiftmodule"
+  },
+  "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/TuristAgent/Models/CSVData.swift" : {
+    "const-values" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/CSVData.swiftconstvalues",
+    "dependencies" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/CSVData.d",
+    "diagnostics" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/CSVData.dia",
+    "index-unit-output-path" : "/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/CSVData.o",
+    "llvm-bc" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/CSVData.bc",
+    "object" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/CSVData.o",
+    "swift-dependencies" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/CSVData.swiftdeps",
+    "swiftmodule" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/CSVData~partial.swiftmodule"
+  },
+  "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/TuristAgent/Models/Itinerario.swift" : {
+    "const-values" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/Itinerario.swiftconstvalues",
+    "dependencies" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/Itinerario.d",
+    "diagnostics" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/Itinerario.dia",
+    "index-unit-output-path" : "/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/Itinerario.o",
+    "llvm-bc" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/Itinerario.bc",
+    "object" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/Itinerario.o",
+    "swift-dependencies" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/Itinerario.swiftdeps",
+    "swiftmodule" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/Itinerario~partial.swiftmodule"
+  },
+  "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/TuristAgent/Models/ModelData.swift" : {
+    "const-values" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ModelData.swiftconstvalues",
+    "dependencies" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ModelData.d",
+    "diagnostics" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ModelData.dia",
+    "index-unit-output-path" : "/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ModelData.o",
+    "llvm-bc" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ModelData.bc",
+    "object" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ModelData.o",
+    "swift-dependencies" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ModelData.swiftdeps",
+    "swiftmodule" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ModelData~partial.swiftmodule"
+  },
+  "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/TuristAgent/Services/ItineraryPlanner.swift" : {
+    "const-values" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ItineraryPlanner.swiftconstvalues",
+    "dependencies" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ItineraryPlanner.d",
+    "diagnostics" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ItineraryPlanner.dia",
+    "index-unit-output-path" : "/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ItineraryPlanner.o",
+    "llvm-bc" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ItineraryPlanner.bc",
+    "object" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ItineraryPlanner.o",
+    "swift-dependencies" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ItineraryPlanner.swiftdeps",
+    "swiftmodule" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ItineraryPlanner~partial.swiftmodule"
+  },
+  "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/TuristAgent/Services/RetrievalAugmented.swift" : {
+    "const-values" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/RetrievalAugmented.swiftconstvalues",
+    "dependencies" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/RetrievalAugmented.d",
+    "diagnostics" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/RetrievalAugmented.dia",
+    "index-unit-output-path" : "/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/RetrievalAugmented.o",
+    "llvm-bc" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/RetrievalAugmented.bc",
+    "object" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/RetrievalAugmented.o",
+    "swift-dependencies" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/RetrievalAugmented.swiftdeps",
+    "swiftmodule" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/RetrievalAugmented~partial.swiftmodule"
+  },
+  "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/TuristAgent/TuristAgentApp.swift" : {
+    "const-values" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/TuristAgentApp.swiftconstvalues",
+    "dependencies" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/TuristAgentApp.d",
+    "diagnostics" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/TuristAgentApp.dia",
+    "index-unit-output-path" : "/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/TuristAgentApp.o",
+    "llvm-bc" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/TuristAgentApp.bc",
+    "object" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/TuristAgentApp.o",
+    "swift-dependencies" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/TuristAgentApp.swiftdeps",
+    "swiftmodule" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/TuristAgentApp~partial.swiftmodule"
+  },
+  "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/TuristAgent/Utils/ProjectFilesSummary.swift" : {
+    "const-values" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ProjectFilesSummary.swiftconstvalues",
+    "dependencies" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ProjectFilesSummary.d",
+    "diagnostics" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ProjectFilesSummary.dia",
+    "index-unit-output-path" : "/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ProjectFilesSummary.o",
+    "llvm-bc" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ProjectFilesSummary.bc",
+    "object" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ProjectFilesSummary.o",
+    "swift-dependencies" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ProjectFilesSummary.swiftdeps",
+    "swiftmodule" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ProjectFilesSummary~partial.swiftmodule"
+  },
+  "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/TuristAgent/Utils/SetupInstructions.swift" : {
+    "const-values" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/SetupInstructions.swiftconstvalues",
+    "dependencies" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/SetupInstructions.d",
+    "diagnostics" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/SetupInstructions.dia",
+    "index-unit-output-path" : "/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/SetupInstructions.o",
+    "llvm-bc" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/SetupInstructions.bc",
+    "object" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/SetupInstructions.o",
+    "swift-dependencies" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/SetupInstructions.swiftdeps",
+    "swiftmodule" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/SetupInstructions~partial.swiftmodule"
+  },
+  "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/TuristAgent/Views/ARSymbolView.swift" : {
+    "const-values" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ARSymbolView.swiftconstvalues",
+    "dependencies" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ARSymbolView.d",
+    "diagnostics" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ARSymbolView.dia",
+    "index-unit-output-path" : "/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ARSymbolView.o",
+    "llvm-bc" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ARSymbolView.bc",
+    "object" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ARSymbolView.o",
+    "swift-dependencies" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ARSymbolView.swiftdeps",
+    "swiftmodule" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ARSymbolView~partial.swiftmodule"
+  },
+  "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/TuristAgent/Views/BarcodeScannerView.swift" : {
+    "const-values" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/BarcodeScannerView.swiftconstvalues",
+    "dependencies" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/BarcodeScannerView.d",
+    "diagnostics" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/BarcodeScannerView.dia",
+    "index-unit-output-path" : "/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/BarcodeScannerView.o",
+    "llvm-bc" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/BarcodeScannerView.bc",
+    "object" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/BarcodeScannerView.o",
+    "swift-dependencies" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/BarcodeScannerView.swiftdeps",
+    "swiftmodule" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/BarcodeScannerView~partial.swiftmodule"
+  },
+  "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/TuristAgent/Views/CityDetailView.swift" : {
+    "const-values" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/CityDetailView.swiftconstvalues",
+    "dependencies" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/CityDetailView.d",
+    "diagnostics" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/CityDetailView.dia",
+    "index-unit-output-path" : "/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/CityDetailView.o",
+    "llvm-bc" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/CityDetailView.bc",
+    "object" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/CityDetailView.o",
+    "swift-dependencies" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/CityDetailView.swiftdeps",
+    "swiftmodule" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/CityDetailView~partial.swiftmodule"
+  },
+  "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/TuristAgent/Views/CityView.swift" : {
+    "const-values" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/CityView.swiftconstvalues",
+    "dependencies" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/CityView.d",
+    "diagnostics" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/CityView.dia",
+    "index-unit-output-path" : "/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/CityView.o",
+    "llvm-bc" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/CityView.bc",
+    "object" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/CityView.o",
+    "swift-dependencies" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/CityView.swiftdeps",
+    "swiftmodule" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/CityView~partial.swiftmodule"
+  },
+  "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/TuristAgent/Views/ContentView.swift" : {
+    "const-values" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ContentView.swiftconstvalues",
+    "dependencies" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ContentView.d",
+    "diagnostics" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ContentView.dia",
+    "index-unit-output-path" : "/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ContentView.o",
+    "llvm-bc" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ContentView.bc",
+    "object" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ContentView.o",
+    "swift-dependencies" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ContentView.swiftdeps",
+    "swiftmodule" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ContentView~partial.swiftmodule"
+  },
+  "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/TuristAgent/Views/CountryView.swift" : {
+    "const-values" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/CountryView.swiftconstvalues",
+    "dependencies" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/CountryView.d",
+    "diagnostics" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/CountryView.dia",
+    "index-unit-output-path" : "/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/CountryView.o",
+    "llvm-bc" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/CountryView.bc",
+    "object" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/CountryView.o",
+    "swift-dependencies" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/CountryView.swiftdeps",
+    "swiftmodule" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/CountryView~partial.swiftmodule"
+  },
+  "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/TuristAgent/Views/GuiaView.swift" : {
+    "const-values" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/GuiaView.swiftconstvalues",
+    "dependencies" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/GuiaView.d",
+    "diagnostics" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/GuiaView.dia",
+    "index-unit-output-path" : "/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/GuiaView.o",
+    "llvm-bc" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/GuiaView.bc",
+    "object" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/GuiaView.o",
+    "swift-dependencies" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/GuiaView.swiftdeps",
+    "swiftmodule" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/GuiaView~partial.swiftmodule"
+  },
+  "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/TuristAgent/Views/HomeView.swift" : {
+    "const-values" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/HomeView.swiftconstvalues",
+    "dependencies" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/HomeView.d",
+    "diagnostics" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/HomeView.dia",
+    "index-unit-output-path" : "/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/HomeView.o",
+    "llvm-bc" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/HomeView.bc",
+    "object" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/HomeView.o",
+    "swift-dependencies" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/HomeView.swiftdeps",
+    "swiftmodule" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/HomeView~partial.swiftmodule"
+  },
+  "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/TuristAgent/Views/ItineraryView.swift" : {
+    "const-values" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ItineraryView.swiftconstvalues",
+    "dependencies" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ItineraryView.d",
+    "diagnostics" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ItineraryView.dia",
+    "index-unit-output-path" : "/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ItineraryView.o",
+    "llvm-bc" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ItineraryView.bc",
+    "object" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ItineraryView.o",
+    "swift-dependencies" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ItineraryView.swiftdeps",
+    "swiftmodule" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/ItineraryView~partial.swiftmodule"
+  },
+  "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/TuristAgent/Views/MainTabView.swift" : {
+    "const-values" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/MainTabView.swiftconstvalues",
+    "dependencies" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/MainTabView.d",
+    "diagnostics" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/MainTabView.dia",
+    "index-unit-output-path" : "/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/MainTabView.o",
+    "llvm-bc" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/MainTabView.bc",
+    "object" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/MainTabView.o",
+    "swift-dependencies" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/MainTabView.swiftdeps",
+    "swiftmodule" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/MainTabView~partial.swiftmodule"
+  },
+  "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/TuristAgent/Views/MapView.swift" : {
+    "const-values" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/MapView.swiftconstvalues",
+    "dependencies" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/MapView.d",
+    "diagnostics" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/MapView.dia",
+    "index-unit-output-path" : "/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/MapView.o",
+    "llvm-bc" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/MapView.bc",
+    "object" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/MapView.o",
+    "swift-dependencies" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/MapView.swiftdeps",
+    "swiftmodule" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/MapView~partial.swiftmodule"
+  },
+  "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "const-values" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftconstvalues",
+    "dependencies" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/GeneratedAssetSymbols.d",
+    "diagnostics" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/GeneratedAssetSymbols.dia",
+    "index-unit-output-path" : "/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "swift-dependencies" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftdeps",
+    "swiftmodule" : "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/build/TuristAgent.build/Debug-iphoneos/TuristAgent.build/Objects-normal/arm64/GeneratedAssetSymbols~partial.swiftmodule"
+  }
+}

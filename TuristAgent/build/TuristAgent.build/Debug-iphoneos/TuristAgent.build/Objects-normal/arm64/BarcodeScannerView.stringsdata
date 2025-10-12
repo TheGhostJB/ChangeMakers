@@ -1,0 +1,16 @@
+{
+  "source": "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/TuristAgent/Views/BarcodeScannerView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Código escaneado: %@",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 36
+        }
+      }
+    ]
+  },
+  "version": 1
+}

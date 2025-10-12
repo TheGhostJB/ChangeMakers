@@ -1,0 +1,24 @@
+{
+  "source": "/Users/joel/Documents/progra/ChangeMakers/TuristAgent/TuristAgent/Views/MainTabView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Viaje",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 16
+        }
+      },
+      {
+        "comment": "",
+        "key": "Escanear",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 22
+        }
+      }
+    ]
+  },
+  "version": 1
+}

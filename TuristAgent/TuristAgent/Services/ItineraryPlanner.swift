@@ -9,12 +9,49 @@ import Foundation
 import FoundationModels
 import Observation
 
+// MARK: - Delay Configuration
+enum DelayConfiguration {
+    case instant   // 0.01 segundos (solo para testing)
+    case fast      // 0.1 segundos
+    case optimized // 0.5 segundos  
+    case slow      // 1.5 segundos
+    
+    var nanoseconds: UInt64 {
+        switch self {
+        case .instant:
+            return 10_000_000  // 0.01 segundos
+        case .fast:
+            return 100_000_000
+        case .optimized:
+            return 500_000_000
+        case .slow:
+            return 1_500_000_000
+        }
+    }
+    
+    var description: String {
+        switch self {
+        case .instant:
+            return "0.01 segundos"
+        case .fast:
+            return "0.1 segundos"
+        case .optimized:
+            return "0.5 segundos"
+        case .slow:
+            return "1.5 segundos"
+        }
+    }
+}
+
 @Observable
 @MainActor
 final class ItineraryPlanner {
     private(set) var itinerary: Itinerario.PartiallyGenerated?
     private var session: LanguageModelSession
     private let csvTool: CSVSearchTool
+    
+    // MARK: - Delay Configuration
+    private let delayConfig: DelayConfiguration = .instant
     
     // Estados individuales para cada componente
     private(set) var titulo: String?
@@ -70,13 +107,13 @@ final class ItineraryPlanner {
     func generateItinerary() async throws {
         // Generar componentes secuencialmente con delays
         try await generateTituloYDescripcion()
-        try await Task.sleep(nanoseconds: 1_500_000_000) // 1.5 segundos
+        try await Task.sleep(nanoseconds: delayConfig.nanoseconds) // Delay configurable
         
         try await generateMapa()
-        try await Task.sleep(nanoseconds: 1_500_000_000) // 1.5 segundos
+        try await Task.sleep(nanoseconds: delayConfig.nanoseconds) // Delay configurable
         
         try await generateLugares()
-        try await Task.sleep(nanoseconds: 1_500_000_000) // 1.5 segundos
+        try await Task.sleep(nanoseconds: delayConfig.nanoseconds) // Delay configurable
         
         try await generateActividades()
     }
@@ -87,21 +124,13 @@ final class ItineraryPlanner {
             includeSchemaInPrompt: false,
             options: GenerationOptions(
                 sampling: .greedy,
-                temperature: 0.3
+                temperature: 0.1
             )
         ) {
-                "Extrae SOLO título y descripción para \(csvData.ciudad), \(csvData.pais)."
-                
+                "Título y descripción para \(csvData.ciudad), \(csvData.pais)."
                 "Incluye \(csvData.lugar1) y \(csvData.lugar2)."
-                
-                "Usa herramienta de búsqueda para \(csvData.ciudad)."
-                
-                "Proporciona SOLO:"
-                "- Título atractivo"
-                "- Descripción concisa de 2-3 oraciones"
-                
-                "MANTÉN LA DESCRIPCIÓN CONCISA: máximo 3 oraciones, fácil de leer en móvil."
-                "Usa solo datos factuales."
+                "Busca información sobre \(csvData.ciudad)."
+                "Título atractivo y descripción de 2-3 oraciones."
         }
 
         for try await partialResponse in stream {
@@ -122,17 +151,12 @@ final class ItineraryPlanner {
             includeSchemaInPrompt: false,
             options: GenerationOptions(
                 sampling: .greedy,
-                temperature: 0.3
+                temperature: 0.1
             )
         ) {
-                "Extrae SOLO título del mapa para \(csvData.ciudad), \(csvData.pais)."
-                
-                "Usa herramienta de búsqueda para \(csvData.ciudad)."
-                
-                "Proporciona SOLO:"
-                "- Título del mapa"
-                
-                "Usa solo datos factuales."
+                "Título del mapa para \(csvData.ciudad), \(csvData.pais)."
+                "Busca información sobre \(csvData.ciudad)."
+                "Título descriptivo del mapa."
         }
 
         for try await partialResponse in stream {
@@ -153,9 +177,6 @@ final class ItineraryPlanner {
         
         // Generar descripciones usando Apple Intelligence
         try await generateDescripcionesLugares()
-        
-        // Simular delay para mantener la experiencia progresiva
-        try await Task.sleep(nanoseconds: 1_500_000_000) // 1.5 segundos
     }
     
     private func generateDescripcionesLugares() async throws {
@@ -164,23 +185,13 @@ final class ItineraryPlanner {
             includeSchemaInPrompt: false,
             options: GenerationOptions(
                 sampling: .greedy,
-                temperature: 0.3
+                temperature: 0.1
             )
         ) {
-                "Genera descripciones concisas y atractivas para lugares en \(csvData.ciudad), \(csvData.pais)."
-                
-                "Para \(csvData.lugar1) y \(csvData.lugar2), crea descripciones de 2-3 oraciones que incluyan:"
-                "- Una característica principal del lugar"
-                "- Una experiencia única que ofrece"
-                "- Por qué es recomendado"
-                
-                "Usa herramienta de búsqueda para \(csvData.ciudad) para obtener información factual."
-                
-                "IMPORTANTE: Proporciona las descripciones en el orden correcto:"
-                "- descripcionLugar1 debe ser para \(csvData.lugar1)"
-                "- descripcionLugar2 debe ser para \(csvData.lugar2)"
-                
-                "MANTÉN LAS DESCRIPCIONES CONCISAS: máximo 3 oraciones, fácil de leer en móvil."
+                "Descripciones para \(csvData.lugar1) y \(csvData.lugar2) en \(csvData.ciudad), \(csvData.pais)."
+                "Busca información sobre \(csvData.ciudad)."
+                "Descripciones de 2-3 oraciones para cada lugar."
+                "descripcionLugar1 para \(csvData.lugar1), descripcionLugar2 para \(csvData.lugar2)."
         }
 
         for try await partialResponse in stream {
@@ -201,9 +212,6 @@ final class ItineraryPlanner {
         
         // Generar descripción usando Apple Intelligence
         try await generateDescripcionActividad()
-        
-        // Simular delay para mantener la experiencia progresiva
-        try await Task.sleep(nanoseconds: 1_500_000_000) // 1.5 segundos
     }
     
     private func generateDescripcionActividad() async throws {
@@ -212,22 +220,12 @@ final class ItineraryPlanner {
             includeSchemaInPrompt: false,
             options: GenerationOptions(
                 sampling: .greedy,
-                temperature: 0.3
+                temperature: 0.1
             )
         ) {
-                "Genera una descripción concisa para la actividad especial '\(csvData.cosaPorHacer1)' en \(csvData.ciudad), \(csvData.pais)."
-                
-                "Crea una descripción de 2-3 oraciones que incluya:"
-                "- En qué consiste esta actividad"
-                "- Qué la hace especial y única"
-                "- Por qué es recomendada para turistas"
-                
-                "Usa herramienta de búsqueda para \(csvData.ciudad) para obtener información factual."
-                
-                "Proporciona SOLO:"
-                "- Descripción concisa de la actividad"
-                
-                "MANTÉN LA DESCRIPCIÓN CONCISA: máximo 3 oraciones, fácil de leer en móvil."
+                "Descripción para '\(csvData.cosaPorHacer1)' en \(csvData.ciudad), \(csvData.pais)."
+                "Busca información sobre \(csvData.ciudad)."
+                "Descripción de 2-3 oraciones de la actividad."
         }
 
         for try await partialResponse in stream {

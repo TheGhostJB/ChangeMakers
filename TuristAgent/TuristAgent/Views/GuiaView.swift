@@ -62,22 +62,7 @@ struct GuiaView: View {
                     .opacity(0.25)
                     .padding(.bottom, 50)
 
-                    if showSuccessMessage {
-                        VStack(spacing: 8) {
-                            Text("¡Todo bien!")
-                                .font(.title2)
-                                .fontWeight(.semibold)
-                                .foregroundColor(.green)
-                            
-                            Text("Abriendo vista AR...")
-                                .font(.caption)
-                                .foregroundColor(.white)
-                        }
-                        .padding()
-                        .background(Capsule().fill(Color.green.opacity(0.2)))
-                        .transition(.opacity)
-                        .animation(.easeIn, value: showSuccessMessage)
-                    } else if let code = scannedCode {
+                    if let code = scannedCode {
                         Text("Código escaneado: \(code)")
                             .font(.headline)
                             .foregroundColor(.white)

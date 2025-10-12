@@ -27,10 +27,10 @@ struct BarcodeScannerView: View {
                     showARSymbolView = true
                 }
             })
-            .frame(height: 600)
+            .frame(height: 700)
             .cornerRadius(16)
             .padding(.horizontal, 20)
-            .padding(.top, 150)
+            .padding(.top, 50)
             
             if !scannedCode.isEmpty {
                 Text("Código escaneado: \(scannedCode)")

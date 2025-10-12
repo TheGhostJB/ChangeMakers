@@ -18,6 +18,7 @@ struct ARSymbolView: View {
     @State private var referenceImagesLoaded = false
     @State private var sessionStarted = false
     @State private var detectedImageName = ""
+    @State private var centerArrowNode: SCNNode?
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
@@ -29,7 +30,8 @@ struct ARSymbolView: View {
                 debugMode: $debugMode,
                 referenceImagesLoaded: $referenceImagesLoaded,
                 sessionStarted: $sessionStarted,
-                detectedImageName: $detectedImageName
+                detectedImageName: $detectedImageName,
+                centerArrowNode: $centerArrowNode
             )
             .ignoresSafeArea()
             
@@ -41,19 +43,19 @@ struct ARSymbolView: View {
                         dismiss()
                     }
                     .foregroundColor(.white)
-                    .padding()
-                    .background(Color.black.opacity(0.6))
-                    .cornerRadius(8)
+                    .font(.system(size: 16, weight: .medium))
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 10)
+                    .background(
+                        RoundedRectangle(cornerRadius: 20)
+                            .fill(.ultraThinMaterial)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 20)
+                                    .stroke(.white.opacity(0.2), lineWidth: 1)
+                            )
+                    )
                     
                     Spacer()
-                    
-                    Button(debugMode ? "Debug ON" : "Debug OFF") {
-                        debugMode.toggle()
-                    }
-                    .foregroundColor(.white)
-                    .padding()
-                    .background(Color.black.opacity(0.6))
-                    .cornerRadius(8)
                 }
                 .padding()
                 
@@ -62,44 +64,33 @@ struct ARSymbolView: View {
                 // Status message
                 VStack(spacing: 16) {
                     if symbolFound {
-                        VStack(spacing: 8) {
-                            Text("¡Imagen FIFA Detectada!")
-                                .font(.title2)
-                                .fontWeight(.bold)
-                                .foregroundColor(.green)
-                            
-                            if !detectedImageName.isEmpty {
-                                Text("Imagen: \(detectedImageName)")
-                                    .font(.caption)
-                                    .foregroundColor(.white)
-                            }
-                        }
-                        .padding()
-                        .background(Color.black.opacity(0.7))
-                        .cornerRadius(12)
+                        Text("Detected")
+                            .font(.caption)
+                            .foregroundColor(.white)
+                            .padding(.horizontal, 12)
+                            .padding(.vertical, 6)
+                            .background(
+                                RoundedRectangle(cornerRadius: 12)
+                                    .fill(.ultraThinMaterial)
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 12)
+                                            .stroke(.white.opacity(0.2), lineWidth: 1)
+                                    )
+                            )
                     } else if isSearching {
-                        VStack(spacing: 8) {
-                            Text("Buscando imagen FIFA...")
-                                .font(.headline)
-                                .foregroundColor(.white)
-                            
-                            if !referenceImagesLoaded {
-                                Text("❌ Imágenes de referencia no cargadas")
-                                    .font(.caption)
-                                    .foregroundColor(.red)
-                            } else if !sessionStarted {
-                                Text("⏳ Iniciando sesión AR...")
-                                    .font(.caption)
-                                    .foregroundColor(.yellow)
-                            } else {
-                                Text("✅ Listo para detectar")
-                                    .font(.caption)
-                                    .foregroundColor(.green)
-                            }
-                        }
-                        .padding()
-                        .background(Color.black.opacity(0.7))
-                        .cornerRadius(12)
+                        Text("Buscando")
+                            .font(.caption)
+                            .foregroundColor(.white)
+                            .padding(.horizontal, 12)
+                            .padding(.vertical, 6)
+                            .background(
+                                RoundedRectangle(cornerRadius: 12)
+                                    .fill(.ultraThinMaterial)
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 12)
+                                            .stroke(.white.opacity(0.2), lineWidth: 1)
+                                    )
+                            )
                     }
                     
                     if showRetryButton {
@@ -107,9 +98,16 @@ struct ARSymbolView: View {
                             resetSearch()
                         }
                         .foregroundColor(.white)
-                        .padding()
-                        .background(Color.blue)
-                        .cornerRadius(12)
+                        .font(.system(size: 16, weight: .medium))
+                        .padding(.horizontal, 24)
+                        .padding(.vertical, 12)
+                        .background(
+                            RoundedRectangle(cornerRadius: 25)
+                                .fill(.blue)
+                                .shadow(color: .blue.opacity(0.3), radius: 8, x: 0, y: 4)
+                        )
+                        .scaleEffect(showRetryButton ? 1.0 : 0.95)
+                        .animation(.easeInOut(duration: 0.2), value: showRetryButton)
                     }
                 }
                 .padding(.bottom, 100)
@@ -152,6 +150,7 @@ struct ARViewContainer: UIViewRepresentable {
     @Binding var referenceImagesLoaded: Bool
     @Binding var sessionStarted: Bool
     @Binding var detectedImageName: String
+    @Binding var centerArrowNode: SCNNode?
     
     func makeUIView(context: Context) -> ARSCNView {
         let arView = ARSCNView()
@@ -190,11 +189,58 @@ struct ARViewContainer: UIViewRepresentable {
             self.sessionStarted = true
         }
         
+        // Create center arrow after session starts
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            self.createCenterArrow(in: arView)
+        }
+        
         // Optimize AR view settings for 60fps
         arView.antialiasingMode = .multisampling2X
         arView.preferredFramesPerSecond = 60
         
         return arView
+    }
+    
+    func createCenterArrow(in arView: ARSCNView) {
+        // Create the same arrow as the detection arrow
+        let arrowNode = SCNNode()
+        
+        // Create arrow shaft (smaller)
+        let shaftGeometry = SCNBox(width: 0.1, height: 2.0, length: 0.05, chamferRadius: 0)
+        shaftGeometry.firstMaterial?.diffuse.contents = UIColor.white
+        shaftGeometry.firstMaterial?.lightingModel = SCNMaterial.LightingModel.constant
+        shaftGeometry.firstMaterial?.emission.contents = UIColor.white
+        let shaftNode = SCNNode(geometry: shaftGeometry)
+        shaftNode.position = SCNVector3(0, -0.4, 0)
+        arrowNode.addChildNode(shaftNode)
+        
+        // Create arrow head (smaller)
+        let headGeometry = SCNPyramid(width: 0.3, height: 0.8, length: 0.05)
+        headGeometry.firstMaterial?.diffuse.contents = UIColor.white
+        headGeometry.firstMaterial?.lightingModel = SCNMaterial.LightingModel.constant
+        headGeometry.firstMaterial?.emission.contents = UIColor.white
+        let headNode = SCNNode(geometry: headGeometry)
+        headNode.position = SCNVector3(0, 0.4, 0)
+        arrowNode.addChildNode(headNode)
+        
+        // Rotate arrow almost 90 degrees on X axis
+        arrowNode.eulerAngles.x = Float.pi * 85 / 180 // Rotate 85 degrees on X axis
+        
+        // Position in center of screen, further away
+        arrowNode.position = SCNVector3(0, 0, -3.0) // 3 meters in front of camera
+        
+        // Add to camera node so it follows camera movement
+        if let cameraNode = arView.pointOfView {
+            cameraNode.addChildNode(arrowNode)
+        } else {
+            // Fallback: add to scene root if camera not available yet
+            arView.scene.rootNode.addChildNode(arrowNode)
+        }
+        
+        // Store reference
+        DispatchQueue.main.async {
+            self.centerArrowNode = arrowNode
+        }
     }
     
     func updateUIView(_ uiView: ARSCNView, context: Context) {

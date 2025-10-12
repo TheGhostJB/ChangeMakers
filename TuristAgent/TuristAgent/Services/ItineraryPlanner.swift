@@ -68,6 +68,7 @@ final class ItineraryPlanner {
     }
     
     func generateItinerary() async throws {
+<<<<<<< Updated upstream
         // Generar componentes secuencialmente con delays
         try await generateTituloYDescripcion()
         try await Task.sleep(nanoseconds: 1_500_000_000) // 1.5 segundos
@@ -103,16 +104,66 @@ final class ItineraryPlanner {
                 "MANTÉN LA DESCRIPCIÓN CONCISA: máximo 3 oraciones, fácil de leer en móvil."
                 "Usa solo datos factuales."
         }
-
-        for try await partialResponse in stream {
-            itinerary = partialResponse.content
+=======
+        print("🚀 Iniciando generación de itinerario para \(csvData.ciudad)")
+        
+        do {
+            // Generar componentes secuencialmente con delays
+            print("📝 Generando título y descripción...")
+            try await generateTituloYDescripcion()
+            try await Task.sleep(nanoseconds: delayConfig.nanoseconds) // Delay configurable
             
-            if let titulo = partialResponse.content.titulo {
-                self.titulo = titulo
+            print("🗺️ Generando mapa...")
+            try await generateMapa()
+            try await Task.sleep(nanoseconds: delayConfig.nanoseconds) // Delay configurable
+            
+            print("🏛️ Generando lugares...")
+            try await generateLugares()
+            try await Task.sleep(nanoseconds: delayConfig.nanoseconds) // Delay configurable
+            
+            print("🎯 Generando actividades...")
+            try await generateActividades()
+            
+            print("✅ Itinerario generado exitosamente")
+        } catch {
+            print("❌ Error generando itinerario: \(error)")
+            self.error = error
+            throw error
+        }
+    }
+    
+    private func generateTituloYDescripcion() async throws {
+        do {
+            let stream = session.streamResponse(
+                generating: Itinerario.self,
+                includeSchemaInPrompt: false,
+                options: GenerationOptions(
+                    sampling: .greedy,
+                    temperature: 0.1
+                )
+            ) {
+                    "Título y descripción para \(csvData.ciudad), \(csvData.pais)."
+                    "Incluye \(csvData.lugar1) y \(csvData.lugar2)."
+                    "Busca información sobre \(csvData.ciudad)."
+                    "Título atractivo y descripción de 2-3 oraciones."
             }
-            if let descripcion = partialResponse.content.descripcion {
-                self.descripcion = descripcion
+>>>>>>> Stashed changes
+
+            for try await partialResponse in stream {
+                itinerary = partialResponse.content
+                
+                if let titulo = partialResponse.content.titulo {
+                    self.titulo = titulo
+                    print("📝 Título generado: \(titulo)")
+                }
+                if let descripcion = partialResponse.content.descripcion {
+                    self.descripcion = descripcion
+                    print("📝 Descripción generada: \(descripcion)")
+                }
             }
+        } catch {
+            print("❌ Error en generateTituloYDescripcion: \(error)")
+            throw error
         }
     }
     

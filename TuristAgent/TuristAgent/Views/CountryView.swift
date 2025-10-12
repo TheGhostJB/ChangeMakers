@@ -24,8 +24,6 @@ struct CountryView: View {
                 .padding(.horizontal)
                 .padding(.top, 20)
             }
-            .navigationTitle("Destinos")
-            .navigationBarTitleDisplayMode(.large)
         }
         .onAppear {
             loadCities()

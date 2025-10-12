@@ -29,6 +29,14 @@ struct ContentView: View {
                     // Contenido principal
                     VStack {
                         ZStack(alignment: .bottom) {
+                            Image("v2")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .scaleEffect(animationStarted ? (implosionStarted ? 0 : 1.4) : 0)
+                                .offset(y: -59)
+                                .colorMultiply(Color(red: 0.63, green: 0.79, blue: 0.25))
+                                .animation(.easeInOut(duration: implosionStarted ? 0.5 : 0.8).delay(implosionStarted ? 0 : 0.5), value: animationStarted)
+                                .animation(.easeInOut(duration: 0.5), value: implosionStarted)
                             // Imagen v2 - Capa 1 (más atrás)
                             Image("v2")
                                 .resizable()
@@ -84,6 +92,15 @@ struct ContentView: View {
                         }
                         
                         ZStack(alignment: .bottom) {
+                            
+                            Image("v6")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .scaleEffect(animationStarted ? (implosionStarted ? 0 : 1.4) : 0)
+                                .offset(y: 49)
+                                .colorMultiply(Color(red: 0.63, green: 0.79, blue: 0.25))
+                                .animation(.easeInOut(duration: implosionStarted ? 0.5 : 0.8).delay(implosionStarted ? 0 : 0.5), value: animationStarted)
+                                .animation(.easeInOut(duration: 0.5), value: implosionStarted)
                             // Imagen v6 - Capa 1 (más atrás)
                             Image("v6")
                                 .resizable()

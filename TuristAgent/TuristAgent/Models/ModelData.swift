@@ -30,11 +30,14 @@ class ModelData {
             let rows = content.components(separatedBy: .newlines).filter { !$0.isEmpty }
             
             guard let headerRow = rows.first else { return }
-            let headers = headerRow.components(separatedBy: ",")
+            let headers = parseCSVRow(headerRow)
             
             for (index, row) in rows.dropFirst().enumerated() {
-                let columns = row.components(separatedBy: ",")
-                guard columns.count == headers.count else { continue }
+                let columns = parseCSVRow(row)
+                guard columns.count == headers.count else { 
+                    print("Fila \(index + 1) tiene \(columns.count) columnas, esperaba \(headers.count)")
+                    continue 
+                }
                 
                 let data = CSVData(
                     id: index + 1,
@@ -71,6 +74,45 @@ class ModelData {
         } catch {
             print("Error cargando CSV: \(error)")
         }
+    }
+    
+    private func parseCSVRow(_ row: String) -> [String] {
+        var result: [String] = []
+        var currentField = ""
+        var insideQuotes = false
+        var i = row.startIndex
+        
+        while i < row.endIndex {
+            let char = row[i]
+            
+            if char == "\"" {
+                if insideQuotes {
+                    // Verificar si es una comilla escapada
+                    let nextIndex = row.index(after: i)
+                    if nextIndex < row.endIndex && row[nextIndex] == "\"" {
+                        currentField += "\""
+                        i = row.index(after: nextIndex)
+                        continue
+                    } else {
+                        insideQuotes = false
+                    }
+                } else {
+                    insideQuotes = true
+                }
+            } else if char == "," && !insideQuotes {
+                result.append(currentField.trimmingCharacters(in: .whitespacesAndNewlines))
+                currentField = ""
+            } else {
+                currentField += String(char)
+            }
+            
+            i = row.index(after: i)
+        }
+        
+        // Agregar el último campo
+        result.append(currentField.trimmingCharacters(in: .whitespacesAndNewlines))
+        
+        return result
     }
     
     func selectCity(_ city: CSVData) {

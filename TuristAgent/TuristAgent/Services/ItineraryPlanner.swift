@@ -97,9 +97,10 @@ final class ItineraryPlanner {
                 "Usa herramienta de búsqueda para \(csvData.ciudad)."
                 
                 "Proporciona SOLO:"
-                "- Título"
-                "- Descripción"
+                "- Título atractivo"
+                "- Descripción concisa de 2-3 oraciones"
                 
+                "MANTÉN LA DESCRIPCIÓN CONCISA: máximo 3 oraciones, fácil de leer en móvil."
                 "Usa solo datos factuales."
         }
 
@@ -166,12 +167,12 @@ final class ItineraryPlanner {
                 temperature: 0.3
             )
         ) {
-                "Genera descripciones detalladas para lugares recomendados en \(csvData.ciudad), \(csvData.pais)."
+                "Genera descripciones concisas y atractivas para lugares en \(csvData.ciudad), \(csvData.pais)."
                 
-                "Para \(csvData.lugar1) y \(csvData.lugar2), proporciona descripciones atractivas que expliquen:"
-                "- Qué hace especial cada lugar"
-                "- Qué pueden esperar experimentar los visitantes"
-                "- Por qué es recomendado para turistas"
+                "Para \(csvData.lugar1) y \(csvData.lugar2), crea descripciones de 2-3 oraciones que incluyan:"
+                "- Una característica principal del lugar"
+                "- Una experiencia única que ofrece"
+                "- Por qué es recomendado"
                 
                 "Usa herramienta de búsqueda para \(csvData.ciudad) para obtener información factual."
                 
@@ -179,7 +180,7 @@ final class ItineraryPlanner {
                 "- descripcionLugar1 debe ser para \(csvData.lugar1)"
                 "- descripcionLugar2 debe ser para \(csvData.lugar2)"
                 
-                "Haz las descripciones informativas y atractivas para turistas."
+                "MANTÉN LAS DESCRIPCIONES CONCISAS: máximo 3 oraciones, fácil de leer en móvil."
         }
 
         for try await partialResponse in stream {
@@ -214,20 +215,19 @@ final class ItineraryPlanner {
                 temperature: 0.3
             )
         ) {
-                "Genera una descripción detallada para la actividad especial '\(csvData.cosaPorHacer1)' en \(csvData.ciudad), \(csvData.pais)."
+                "Genera una descripción concisa para la actividad especial '\(csvData.cosaPorHacer1)' en \(csvData.ciudad), \(csvData.pais)."
                 
-                "Proporciona una descripción atractiva que explique:"
+                "Crea una descripción de 2-3 oraciones que incluya:"
                 "- En qué consiste esta actividad"
                 "- Qué la hace especial y única"
-                "- Qué pueden esperar experimentar los visitantes"
                 "- Por qué es recomendada para turistas"
                 
                 "Usa herramienta de búsqueda para \(csvData.ciudad) para obtener información factual."
                 
                 "Proporciona SOLO:"
-                "- Descripción detallada de la actividad"
+                "- Descripción concisa de la actividad"
                 
-                "Haz la descripción informativa y atractiva para turistas."
+                "MANTÉN LA DESCRIPCIÓN CONCISA: máximo 3 oraciones, fácil de leer en móvil."
         }
 
         for try await partialResponse in stream {

@@ -43,6 +43,7 @@ struct CityView: View {
                             Text("Crear Itinerario")
                                 .fontWeight(.semibold)
                         }
+                        .buttonStyle(.glass)
                         .frame(maxWidth: .infinity)
                         .padding()
                         .background(.blue)

@@ -92,7 +92,7 @@ final class ItineraryPlanner {
         ) {
                 "Extrae SOLO título y descripción para \(csvData.ciudad), \(csvData.pais)."
                 
-                "Incluye \(csvData.estadio) y \(csvData.lugar1) y \(csvData.lugar2)."
+                "Incluye \(csvData.lugar1) y \(csvData.lugar2)."
                 
                 "Usa herramienta de búsqueda para \(csvData.ciudad)."
                 

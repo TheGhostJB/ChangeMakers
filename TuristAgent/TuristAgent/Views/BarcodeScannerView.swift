@@ -14,11 +14,7 @@ struct BarcodeScannerView: View {
     
     var body: some View {
         VStack(spacing: 20) {
-            Text("SCAN TICKET")
-                .font(.largeTitle)
-                .fontWeight(.bold)
-                .foregroundColor(.black)
-                .padding(.top, 20)
+        
             
 
             ScannerEmbeddedView(didFindCode: { code in
@@ -28,6 +24,7 @@ struct BarcodeScannerView: View {
             .frame(height: 600)
             .cornerRadius(16)
             .padding(.horizontal, 20)
+            .padding(.top, 150)
             
             if !scannedCode.isEmpty {
                 Text("Código escaneado: \(scannedCode)")

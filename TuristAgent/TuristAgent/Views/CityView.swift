@@ -407,8 +407,9 @@ struct PlaceCardView: View {
                 }
                 
                 HStack(spacing: 4) {
+                    let ratingValue = min(max(Int(Double(rating) ?? 0), 0), 5)
                     ForEach(0..<5) { index in
-                        Image(systemName: index < Int(Double(rating) ?? 0) ? "star.fill" : "star")
+                        Image(systemName: index < ratingValue ? "star.fill" : "star")
                             .foregroundColor(.orange)
                             .font(.system(size: 10))
                     }

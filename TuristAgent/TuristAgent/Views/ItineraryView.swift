@@ -199,8 +199,9 @@ struct ItineraryView: View {
     
     private func ratingView(_ rating: String) -> some View {
         HStack {
+            let ratingValue = min(max(Int(Double(rating) ?? 0), 0), 5)
             ForEach(0..<5) { index in
-                Image(systemName: index < Int(Double(rating) ?? 0) ? "star.fill" : "star")
+                Image(systemName: index < ratingValue ? "star.fill" : "star")
                     .foregroundColor(.orange)
                     .font(.caption)
             }
@@ -246,4 +247,5 @@ struct ItineraryView: View {
             }
         }
     }
+    
 }

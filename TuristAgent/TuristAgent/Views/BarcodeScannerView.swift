@@ -8,7 +8,41 @@
 import SwiftUI
 import AVFoundation
 
-struct BarcodeScannerView: UIViewControllerRepresentable {
+struct BarcodeScannerView: View {
+    var didFindCode: (String) -> Void
+    @State private var scannedCode: String = ""
+    
+    var body: some View {
+        VStack(spacing: 20) {
+            Text("SCAN TICKET")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .foregroundColor(.black)
+                .padding(.top, 20)
+            
+
+            ScannerEmbeddedView(didFindCode: { code in
+                scannedCode = code
+                didFindCode(code)
+            })
+            .frame(height: 600)
+            .cornerRadius(16)
+            .padding(.horizontal, 20)
+            
+            if !scannedCode.isEmpty {
+                Text("Código escaneado: \(scannedCode)")
+                    .font(.caption)
+                    .foregroundColor(.gray)
+                    .padding(.horizontal)
+            }
+            
+            Spacer()
+        }
+        .background(Color.white)
+    }
+}
+
+struct ScannerEmbeddedView: UIViewControllerRepresentable {
     var didFindCode: (String) -> Void
 
     func makeUIViewController(context: Context) -> ScannerViewController {
@@ -127,5 +161,11 @@ class ScannerViewController: UIViewController {
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         .portrait
+    }
+}
+
+#Preview {
+    BarcodeScannerView { code in
+        print("Código escaneado: \(code)")
     }
 }

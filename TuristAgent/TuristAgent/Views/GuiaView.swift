@@ -48,15 +48,18 @@ struct GuiaView: View {
                         .padding(.bottom, 20)
 
                     // Scanning frame
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 20)
-                            .stroke(Color.blue, lineWidth: 3)
-                            .frame(width: 250, height: 250)
-                            .overlay(
-                                ScannerCornersOverlay()
-                                    .frame(width: 250, height: 250)
-                            )
-                    }
+                    Rectangle()
+                    .foregroundColor(.clear)
+                    .frame(width: 220, height: 415)
+                    .background(Color(red: 0.04, green: 0, blue: 0))
+                    .cornerRadius(25)
+                    .shadow(color: .black.opacity(0.25), radius: 2, x: 0, y: 4)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 25)
+                        .inset(by: -2.5)
+                        .stroke(.white, lineWidth: 5)
+                    )
+                    .opacity(0.25)
                     .padding(.bottom, 50)
 
                     if showSuccessMessage {

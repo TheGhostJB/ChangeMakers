@@ -15,7 +15,6 @@ struct ProjectFilesSummary: View {
                     FileRow(name: "ARSymbolView.swift", description: "Vista AR que detecta imagen 'cp' y muestra 'ss'", status: "✅ Creado")
                     FileRow(name: "GuiaView.swift", description: "Vista de escaneo que abre AR al detectar 'MTY'", status: "✅ Actualizado")
                     FileRow(name: "BarcodeScannerView.swift", description: "Escáner de códigos de barras", status: "✅ Existente")
-                    FileRow(name: "ScannerCornersOverlay.swift", description: "Overlay visual para el escáner", status: "✅ Creado")
                 }
                 
                 Section("🔧 Archivos de Configuración") {

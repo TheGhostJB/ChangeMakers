@@ -23,7 +23,6 @@ struct SetupInstructions: View {
                         VStack(alignment: .leading, spacing: 8) {
                             Text("1. Agregar archivos al proyecto Xcode:")
                             Text("   • ARSymbolView.swift")
-                            Text("   • ScannerCornersOverlay.swift")
                             Text("   • ARConfiguration.swift")
                             Text("   • BarcodeScannerView.swift")
                         }

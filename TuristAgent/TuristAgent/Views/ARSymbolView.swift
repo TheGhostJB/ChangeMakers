@@ -189,10 +189,7 @@ struct ARViewContainer: UIViewRepresentable {
             self.sessionStarted = true
         }
         
-        // Create center arrow after session starts
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            self.createCenterArrow(in: arView)
-        }
+
         
         // Optimize AR view settings for 60fps
         arView.antialiasingMode = .multisampling2X
@@ -201,47 +198,7 @@ struct ARViewContainer: UIViewRepresentable {
         return arView
     }
     
-    func createCenterArrow(in arView: ARSCNView) {
-        // Create the same arrow as the detection arrow
-        let arrowNode = SCNNode()
-        
-        // Create arrow shaft (smaller)
-        let shaftGeometry = SCNBox(width: 0.1, height: 2.0, length: 0.05, chamferRadius: 0)
-        shaftGeometry.firstMaterial?.diffuse.contents = UIColor.white
-        shaftGeometry.firstMaterial?.lightingModel = SCNMaterial.LightingModel.constant
-        shaftGeometry.firstMaterial?.emission.contents = UIColor.white
-        let shaftNode = SCNNode(geometry: shaftGeometry)
-        shaftNode.position = SCNVector3(0, -0.4, 0)
-        arrowNode.addChildNode(shaftNode)
-        
-        // Create arrow head (smaller)
-        let headGeometry = SCNPyramid(width: 0.3, height: 0.8, length: 0.05)
-        headGeometry.firstMaterial?.diffuse.contents = UIColor.white
-        headGeometry.firstMaterial?.lightingModel = SCNMaterial.LightingModel.constant
-        headGeometry.firstMaterial?.emission.contents = UIColor.white
-        let headNode = SCNNode(geometry: headGeometry)
-        headNode.position = SCNVector3(0, 0.4, 0)
-        arrowNode.addChildNode(headNode)
-        
-        // Rotate arrow almost 90 degrees on X axis
-        arrowNode.eulerAngles.x = Float.pi * 85 / 180 // Rotate 85 degrees on X axis
-        
-        // Position in center of screen, further away
-        arrowNode.position = SCNVector3(0, 0, -3.0) // 3 meters in front of camera
-        
-        // Add to camera node so it follows camera movement
-        if let cameraNode = arView.pointOfView {
-            cameraNode.addChildNode(arrowNode)
-        } else {
-            // Fallback: add to scene root if camera not available yet
-            arView.scene.rootNode.addChildNode(arrowNode)
-        }
-        
-        // Store reference
-        DispatchQueue.main.async {
-            self.centerArrowNode = arrowNode
-        }
-    }
+    
     
     func updateUIView(_ uiView: ARSCNView, context: Context) {
         // Update debug mode
